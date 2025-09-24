@@ -59,11 +59,18 @@ public class Employee {
 		System.out.println("price of laptop for l1 object is: "+ l1.getPrice());
 		*/
 		
-		//constructor tag on spring.html to set the price value using constructor
+		/*constructor tag on spring.html to set the price value using constructor
 		ApplicationContext context1 = new ClassPathXmlApplicationContext("spring.xml");
 		Laptop l3 = (Laptop) context1.getBean("laptop");
 		System.out.println("price of laptop for l1 object is: "+ l3.getPrice());
 		System.out.println("brand: "+l3.getBrand());
+		*/
+		
+		//Setting or creating the object of a class which is inside another class
+		ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
+		Laptop lap = (Laptop) context.getBean("laptop");
+		lap.print();
+		
 	}
 
 }

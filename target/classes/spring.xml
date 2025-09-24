@@ -6,18 +6,21 @@
 <!-- This  is the configuration file where a bean is declared, when we need an object of a class, we call getBean() 
 method, it will search for the id attribute in bean tags to match the  parameter inside getBean() if a match is found it will create an object
 for the mentioned class inside class attribute -->
-
-
 <bean id="laptop" class="com.bhavesh16281.Laptop" scope="prototype" >
 	<!-- This property tag will indirectly call the setter method of laptop class to set the value 
 		<property name="price" value="40000"></property>
 	-->
 	
 	<!-- This constructor-arg tag will indirectly call the respective constructor based on the arguments to assign the values
-	Here 2 constructor-arg tags are mentioned so 2 argument constructor is called to set the values -->
+	Here 2 constructor-arg tags are mentioned so 2 argument constructor is called to set the values 
 	<constructor-arg value="35000"></constructor-arg>
 	<constructor-arg value="lenovo"></constructor-arg>
+	-->
+	
+	<property name="ram" ref="ramObject"></property>
 </bean>
+
+<bean id="ramObject" class="com.bhavesh16281.Ram"></bean>
 
 
 </beans>

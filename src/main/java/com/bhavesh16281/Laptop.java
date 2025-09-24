@@ -1,8 +1,18 @@
 package com.bhavesh16281;
 
-public class Laptop {
+public class Laptop implements Computer {
 	private int price;
 	private String brand;
+	private Ram ram;
+	private Computer computer;
+	
+	
+	@Override
+	public void print() {
+		System.out.println("Inside Laptop Class..");
+		ram.ramMethod();
+	}
+
 	
 	public String getBrand() {
 		return brand;
@@ -35,8 +45,19 @@ public class Laptop {
 		System.out.println("Inside Laptop Constructor..");
 	}
 	
-	public void print() {
-		System.out.println("Inside Laptop Class..");
+	public Computer getComputer() {
+		return computer;
+	}
+
+	public void setComputer(Computer computer) {
+		this.computer = computer;
+	}
+	public Ram getRam() {
+		return ram;
+	}
+
+	public void setRam(Ram ram) {
+		this.ram = ram;
 	}
 
 }
