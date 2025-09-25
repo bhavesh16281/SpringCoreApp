@@ -8,10 +8,18 @@
 Here we mention the autowire attribute as byType where it checks the type of the object to be created instead of reference name
 In this case Computer is the type of the object so it will check the beans available for that class, here Desktop bean is available which matches the type Computer so
 it will create the object, if both Desktop and Laptop are present then it will throw an exception
--->
+
 <bean id="comImpl" class="com.bhavesh16281.ComputerImpl"  scope="prototype" autowire="byType"></bean>
-<!-- <bean id="laptop" class="com.bhavesh16281.Laptop"></bean> -->
+<bean id="laptop" class="com.bhavesh16281.Laptop"></bean> 
 <bean id="desktop" class="com.bhavesh16281.Desktop"></bean>
+-->
+
+<!-- Primary Attribute to overcome Autowire exception with multiple beans -->
+<bean id="comImpl" class="com.bhavesh16281.ComputerImpl" autowire="byType">
+
+</bean>
+<bean id="laptop" class="com.bhavesh16281.Laptop"></bean>
+<bean id = "desktop" class="com.bhavesh16281.Desktop" primary="true"></bean>
 
 
 
