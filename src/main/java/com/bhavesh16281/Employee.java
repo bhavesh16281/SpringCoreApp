@@ -74,7 +74,7 @@ public class Employee {
 		
 		//Autowire - If an object is internally dependent on any other object then using autowire, 
 		//spring can create the dependent objects automatically
-		ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
+		ApplicationContext context = new ClassPathXmlApplicationContext("spring2.xml");
 		ComputerImpl ci = (ComputerImpl) context.getBean("comImpl");
 		ci.print();
 	}

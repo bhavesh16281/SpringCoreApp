@@ -2,7 +2,7 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-
+ 
 <!-- This  is the configuration file where a bean is declared, when we need an object of a class, we call getBean() 
 method, it will search for the id attribute in bean tags to match the  parameter inside getBean() if a match is found it will create an object
 for the mentioned class inside class attribute -->
@@ -25,6 +25,10 @@ for the mentioned class inside class attribute -->
 	
 	
 </bean>
+<bean id="ramObject" class="com.bhavesh16281.Ram"></bean>
+
+
+
 <!-- Autowire using Name
 	In this tag we created a bean for ComputerImpl class which has dependency on Computer object but Computer is an interface which is implemented by Desktop and Laptop
 	So when we use autowire="byName" it will check the object reference for all the dependent objects ad compare that with the bean ID, in this case 
@@ -37,11 +41,7 @@ for the mentioned class inside class attribute -->
  -->
 
 
-<!-- Autowire using Type -->
-<bean id="comImpl" class="com.bhavesh16281.ComputerImpl"  scope="prototype" autowire="byType"></bean>
-<bean id="computers" class="com.bhavesh16281.Desktop"></bean>
 
-<bean id="ramObject" class="com.bhavesh16281.Ram"></bean>
 
 
 
