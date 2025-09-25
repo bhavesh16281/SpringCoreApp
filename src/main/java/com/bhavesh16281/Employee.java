@@ -66,11 +66,17 @@ public class Employee {
 		System.out.println("brand: "+l3.getBrand());
 		*/
 		
-		//Setting or creating the object of a class which is inside another class
+		/*Setting or creating the object of a class which is inside another class
 		ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
 		Laptop lap = (Laptop) context.getBean("laptop");
 		lap.print();
+		*/
 		
+		//Autowire - If an object is internally dependent on any other object then using autowire, 
+		//spring can create the dependent objects automatically
+		ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
+		ComputerImpl ci = (ComputerImpl) context.getBean("comImpl");
+		ci.print();
 	}
 
 }

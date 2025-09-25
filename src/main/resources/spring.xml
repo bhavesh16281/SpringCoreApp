@@ -17,10 +17,33 @@ for the mentioned class inside class attribute -->
 	<constructor-arg value="lenovo"></constructor-arg>
 	-->
 	
+	
+	<!-- This tag is for Setting or creating the object of a class which is inside another class, the text inside ref attribute will be compared
+	with the other beans id attribute and if they match the object will be created for that class
 	<property name="ram" ref="ramObject"></property>
+	-->
+	
+	
 </bean>
+<!-- Autowire using Name
+	In this tag we created a bean for ComputerImpl class which has dependency on Computer object but Computer is an interface which is implemented by Desktop and Laptop
+	So when we use autowire="byName" it will check the object reference for all the dependent objects ad compare that with the bean ID, in this case 
+	we used computer as object reference name and this name will be compared with bean id if the bean is found then it will create object for the class mentioned in the bean id.
+	If multiple bean ID's are found for the ref name then it will thorow an exception
+
+<bean id="comImpl" class="com.bhavesh16281.ComputerImpl"  scope="prototype" autowire="byName"></bean>
+
+<bean id="computer" class="com.bhavesh16281.Desktop"></bean>
+ -->
+
+
+<!-- Autowire using Type -->
+<bean id="comImpl" class="com.bhavesh16281.ComputerImpl"  scope="prototype" autowire="byType"></bean>
+<bean id="computers" class="com.bhavesh16281.Desktop"></bean>
 
 <bean id="ramObject" class="com.bhavesh16281.Ram"></bean>
+
+
 
 
 </beans>

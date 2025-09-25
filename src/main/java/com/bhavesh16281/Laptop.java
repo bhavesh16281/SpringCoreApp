@@ -4,7 +4,6 @@ public class Laptop implements Computer {
 	private int price;
 	private String brand;
 	private Ram ram;
-	private Computer computer;
 	
 	
 	@Override
@@ -45,16 +44,6 @@ public class Laptop implements Computer {
 		System.out.println("Inside Laptop Constructor..");
 	}
 	
-	public Computer getComputer() {
-		return computer;
-	}
-
-	public void setComputer(Computer computer) {
-		this.computer = computer;
-	}
-	public Ram getRam() {
-		return ram;
-	}
 
 	public void setRam(Ram ram) {
 		this.ram = ram;
